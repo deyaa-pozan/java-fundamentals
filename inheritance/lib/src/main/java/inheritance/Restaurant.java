@@ -2,7 +2,7 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Restaurant {
+public class Restaurant implements Reviewable{
     private String name;
     private int numOfStars;
     private String priceCategory;
@@ -52,14 +52,13 @@ public class Restaurant {
     public ArrayList<Review> getReview() {
         return list;
     }
-
+    @Override
     public void addReview(Review review) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getAuthor().equals(review.getAuthor())){
                return;
             }
         }
-
         list.add(review);
         this.setNumOfStars(review.getNumOfStars());
 
@@ -75,4 +74,6 @@ public class Restaurant {
                 ", review=" + list+
                 '}';
     }
+
+
 }
