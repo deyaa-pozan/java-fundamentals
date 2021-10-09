@@ -1,18 +1,18 @@
 package inheritance;
 
-public class Review extends Restaurant {
+public class Review  {
     private String body;
     private String author;
     private int numOfStars;
-    private Restaurant restaurant;
 
-    public Review(Restaurant restaurant, String body, String author, int numOfStars) {
-        super(restaurant.getName(), restaurant.getNumOfStars(),restaurant.getPriceCategory());
-        this.restaurant = restaurant;
+
+
+    public Review( String body, String author, int numOfStars) {
         this.body = body;
         this.author = author;
         this.numOfStars = numOfStars;
     }
+
 
     public String getBody() {
         return body;
@@ -28,12 +28,12 @@ public class Review extends Restaurant {
         return author;
     }
 
-    @Override
+
     public int getNumOfStars() {
         return numOfStars;
     }
 
-    @Override
+
     public void setNumOfStars(int numOfStars) {
         if(numOfStars >= 0 && numOfStars <=5){
             this.numOfStars = numOfStars;
@@ -46,13 +46,7 @@ public class Review extends Restaurant {
         this.author = author;
     }
 
-    public Restaurant getRestaurant() {
-        return restaurant;
-    }
 
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
-    }
 
     @Override
     public String toString() {
@@ -60,7 +54,6 @@ public class Review extends Restaurant {
                 "body='" + body + '\'' +
                 ", author='" + author + '\'' +
                 ", numOfStars=" + numOfStars +
-                ", restaurant=" + restaurant.getName() +
                 '}';
     }
 }
